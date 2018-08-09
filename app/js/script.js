@@ -94,7 +94,9 @@ $(document).ready(function(){
 
     $('.js-menuClose').click(function (e) {
         e.preventDefault();
-        $('.header__inner').removeClass('header__inner-open');
+        if ($(e.target).is('.js-menuClose')){
+            $('.header__inner').removeClass('header__inner-open');
+        }
     });
 
     scroolBtn('.toTop');
@@ -102,6 +104,25 @@ $(document).ready(function(){
     $(document).on('scroll',function(){
         scroolBtn('.toTop');
 
+        windowSize();
+    });
+
+    $('.toTop').on('click',function(){
+        $('html,body').animate({
+            scrollTop: 0
+        },500);
+    });
+
+    $('.js-cookiePop').on('click', function (e) {
+        e.preventDefault();
+        $('.cookiePop').fadeOut();
+    });
+});
+
+$(window).on('load resize',windowSize);
+
+function windowSize(){
+    if ($(window).width() > '992'){
         var top2 = $(this).scrollTop();
         if (top2 < 300){
             var scrollWal = top2/4;
@@ -113,18 +134,8 @@ $(document).ready(function(){
             var scrollWal2 = (top2-offset)/4;
             $('.sectionPayment__figure').css({'transform':'translateY(' + scrollWal2 + 'px)'});
         }
-    });
-
-    $('.toTop').on('click',function(){
-        $('html,body').animate({
-            scrollTop: 0
-        },500);
-    });
-
-
-
-});
-
+    }
+}
 
 function scroolBtn(btn){
     var top = $(document).scrollTop();

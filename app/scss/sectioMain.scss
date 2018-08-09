@@ -1,6 +1,8 @@
 .section {
   min-height: 100vh;
   padding: 10vh 0;
+  position: relative;
+  z-index:1;
 
   &Main {
     padding-top: 15vh;
@@ -27,6 +29,7 @@
         max-width: 80%;
         position: static;
         margin: 0 auto;
+        transform: translateY(0)!important;
       }
     }
 
@@ -90,20 +93,18 @@
       max-width: 80%;
       @include md-block() {
         margin: 32px auto;
+        transform: translateY(0)!important;
       }
     }
 
   }
 
   &Webapp{
-    &__content{
-      padding: 10vh 0 0 10vw;
+    &__slider{
       @include md-block() {
-        padding:0;
-        text-align: center;
+        margin: 10px 0;
       }
     }
-
   }
 
   &Partners{
