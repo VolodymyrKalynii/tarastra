@@ -1,0 +1,108 @@
+.sidebarList{
+	padding-right: 17px;
+
+	&__divider{
+		height: 16px;
+		position: relative;
+		display: flex;
+		justify-content: center;
+		margin: -8px 0;
+		background-color: #ffffff;
+		&:after{
+			content: '';
+			position: absolute;
+			top: 8px;
+			width: 100%;
+			height: 1px;
+			background-color: rgba(151, 151, 151, 0.1);
+		}
+	}
+
+	&__titleTime{
+		position: relative;
+		color: rgba(4, 44, 71, 0.3);
+		line-height: 1;
+		background-color: #ffffff;
+		padding: 0 20px;
+		font-weight: 500;
+		z-index: 1;
+		font-size: 12px;
+	}
+
+	&__item{
+		display: flex;
+		align-items: center;
+		padding: 10px 0 13px;
+		border-bottom: 1px solid rgba(151, 151, 151, 0.1);
+	}
+
+	&__icon{
+		margin-right: 10px;
+	}
+
+	&__alert{
+
+	}
+
+	&__info{
+		max-width: 150px;
+	}
+
+	&__time{
+		color: rgba(4, 44, 71, 0.5);
+		font-size: 12px;
+	}
+
+	&__text{
+		font-size: 14px;
+		font-weight: 500;
+	}
+
+	&__status{
+		font-size: 14px;
+		color: rgba(4, 44, 71, 0.5);
+		position: relative;
+		display: flex;
+		align-items: center;
+	}
+
+	&__trStatus{
+		display: inline-block;
+		height: 6px;
+		min-width: 6px;
+		color: transparent;
+		border-radius: 50%;
+		margin-right: 7px;
+		font-size: 10px;
+
+		&-pending{
+			background-color: #f5a623;
+			box-shadow: 0 0 0 2px rgba(245, 166, 35, 0.3);
+		}
+		&-active{
+			background-color: #7ed321;
+			box-shadow: 0 0 0 2px rgba(126, 211, 33, 0.3);
+		}
+
+		&Text{
+			font-size: 10px;
+		}
+	}
+
+	&__sum{
+		font-size: 18px;
+		margin-left: auto;
+		line-height: 1.2;
+		min-width: 140px;
+		text-align: right;
+	}
+
+	&__textTruncate{
+		font-size: 18px;
+		font-weight: 500;
+		display: block;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+}

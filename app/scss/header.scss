@@ -1,0 +1,189 @@
+.header{
+	position: fixed;
+    display: flex;
+    width: 100vw;
+    top: 0;
+    padding: 1vh 24px 0 24px;
+    height: 78px;
+    justify-content: space-between;
+    z-index: 9;
+    background: #ffffff;
+	align-items: center;
+
+	&__left{
+		display: flex;
+		align-items: center;
+		margin-right: 10px;
+	}
+
+	&__mainLogo{
+		min-width: 130px;
+	}
+
+	&__right{
+		display: flex;
+		align-items: center;
+		padding: 0 8px;
+	}
+
+	&__link {
+		padding: 0 16px;
+		text-decoration: none;
+		color: #042c47;
+		font-size: 14px;
+		font-weight: 300;
+		&:hover {
+			color: #4da1ff;
+		}
+
+	}
+
+	&__cabBtnSignUp{
+		font-weight: 500;
+		color: #fff;
+		line-height: 35px;
+		padding: 8px 20px;
+		text-align: center;
+		
+		&:hover{
+			color: #fff;
+		}
+	}
+
+	&__open{
+		border: none;
+		background: none;
+		position: relative;
+		width: 20px;
+		height: 14px;
+		padding:0;
+		cursor: pointer;
+		display: none;
+
+		&Middle{
+			width: 100%;
+			height: 2px;
+			margin: auto;
+			transition: opacity .4s ease;
+			background-color: #000;
+			display: block;
+		}
+
+		&:before,&:after{
+			position: absolute;
+			left: 0;
+			width: 100%;
+			height: 2px;
+			transition: top .4s ease,transform .4s ease;
+			background-color: #000;
+			content: '';
+		}
+
+		&:before{
+			top:0;
+		}
+
+		&:after{
+			bottom:0;
+		}
+
+		@include md-block() {
+			display: block;
+		}
+	}
+
+	&__mobLogoWrapp{
+		display: none;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__mobLogo{
+		width:180px;
+		padding:30px 0;
+	}
+
+
+	@include md-block() {
+
+		&__overlay{
+			left:0;
+			top:0;
+			right:0;
+			bottom:0;
+			position: fixed;
+		}
+		&__link{
+			width:100%;
+			padding:15px 10px;
+		}
+		&__mobLogoWrapp{
+			display: flex;
+			width:100%;
+			order: -2;
+		}
+
+		&__inner{
+			top: 0;
+			opacity:0;
+			left: -100%;
+			width: 100%;
+			height: 100%;
+			//z-index: -1;
+			position: fixed;
+			will-change: opacity;
+			background-color: rgba(0, 0, 0, 0.5);
+
+			transition: all .2s cubic-bezier(0.4, 0, 0.2, 1);
+			&-open{
+				left:0;
+				opacity:1;
+			}
+		}
+
+		&__right{
+			position: relative;
+			flex-direction: column;
+			width: 300px;
+			height: 100vh;
+			min-height: 430px;
+			overflow: auto;
+			padding:0;
+			background: #fff;
+			box-shadow: 0px 8px 10px -5px rgba(0, 0, 0, 0.2), 0px 16px 24px 2px rgba(0, 0, 0, 0.14), 0px 6px 30px 5px rgba(0, 0, 0, 0.12);
+		}
+
+		&__cabBtns{
+			order: -1;
+			width:100%;
+			display: flex;
+			justify-content: space-between;
+			padding: 15px;
+		}
+
+		&__cabBtnLogIn{
+			text-align: center;
+			border-radius: 100px;
+			box-shadow: 0 0 7px 3px rgba(0, 103, 175, 0.1);
+			overflow: hidden;
+			transition: all 0.2s ease;
+			padding: 8px 16px;
+			margin: 0 5px;
+			width:45%;
+			font-weight: 500;
+			color: rgba(77, 161, 255, 0.9);
+
+			&:hover{
+				background-color: #cae3f9;
+			}
+		}
+
+		&__cabBtnSignUp{
+			width:45%;
+			text-align: center;
+			margin: 0 10px;
+			line-height: normal;
+			padding: 8px 20px;
+		}
+	}
+}

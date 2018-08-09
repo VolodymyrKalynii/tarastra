@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="20px" viewBox="0 0 30 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>google-plus_icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Terms" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Terms_desktop-final" transform="translate(-808.000000, -6222.000000)" fill="#4DA1FF" fill-rule="nonzero">
+            <g id="footer" transform="translate(57.000000, 5942.000000)">
+                <g id="google-plus_icon" transform="translate(751.000000, 280.000000)">
+                    <polygon id="Shape" points="26.25 7.8125 26.25 3.90625 24.375 3.90625 24.375 7.8125 20.625 7.8125 20.625 9.765625 24.375 9.765625 24.375 13.671875 26.25 13.671875 26.25 9.765625 30 9.765625 30 7.8125"></polygon>
+                    <path d="M9.375,7.8125 L9.375,11.71875 L14.679375,11.71875 C13.905,13.9921875 11.82,15.625 9.375,15.625 C6.27375,15.625 3.75,12.9960938 3.75,9.765625 C3.75,6.53515625 6.27375,3.90625 9.375,3.90625 C10.719375,3.90625 12.013125,4.40820312 13.018125,5.3203125 L15.481875,2.375 C13.794375,0.84375 11.626875,0 9.375,0 C4.205625,0 0,4.38085938 0,9.765625 C0,15.1503906 4.205625,19.53125 9.375,19.53125 C14.544375,19.53125 18.75,15.1503906 18.75,9.765625 L18.75,7.8125 L9.375,7.8125 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

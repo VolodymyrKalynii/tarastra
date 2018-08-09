@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="19px" height="19px" viewBox="0 0 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>noun_834843_cc</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="0%" y1="100%" x2="201.41942%" y2="-124.739583%" id="linearGradient-1">
+            <stop stop-color="#0067AF" offset="0%"></stop>
+            <stop stop-color="#00AAD7" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="dashboard-005i" transform="translate(-1036.000000, -448.000000)" stroke="url(#linearGradient-1)">
+            <g id="activity-Log" transform="translate(997.000000, 169.000000)">
+                <g id="1" transform="translate(31.000000, 247.000000)">
+                    <g id="noun_834843_cc" transform="translate(9.000000, 33.000000)">
+                        <g id="Group">
+                            <g transform="translate(4.958333, 4.958333)" id="Shape">
+                                <path d="M6.83541667,6.83541667 L0.247916667,0.247916667"></path>
+                                <path d="M0.247916667,6.83541667 L6.83541667,0.247916667"></path>
+                            </g>
+                            <polygon id="Shape" points="0 12.00625 0 4.99375 4.99375 0 12.00625 0 17 4.99375 17 12.00625 12.00625 17 4.99375 17"></polygon>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
