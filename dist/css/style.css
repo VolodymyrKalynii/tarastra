@@ -143,6 +143,17 @@ a {
   outline: none;
 }
 
+*:active,
+*:hover,
+*:focus {
+  outline: 0;
+  outline-offset: 0;
+}
+
+*::-moz-focus-inner {
+  border: 0;
+}
+
 .row-flex {
   display: -webkit-box;
   display: -webkit-flex;
