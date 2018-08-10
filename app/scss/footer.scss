@@ -35,6 +35,12 @@
     }
   }
 
+  li{
+    &:before{
+      display: none;
+    }
+  }
+
   &__link{
     color: $mainColor;
     text-decoration: none;

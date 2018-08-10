@@ -5,7 +5,7 @@
 function loader() {
     $('.loader').fadeOut();
 }
-setTimeout(loader, 3000);
+setTimeout(loader, 000);
 
 // $(window).on('load', function() {
 //     $('.loader').fadeOut().fadeOut('slow');
@@ -120,12 +120,15 @@ function animateElements(){
         if (top2 < 300){
             var scrollWal = top2/4;
             $('.sectionMain__macbookImg').css({'transform':'translateY(' + scrollWal + 'px)'});
+            $('.sectionCta__cardImg').css({'transform':'translateY(' + scrollWal + 'px)'});
         }
-        var offset = $('.sectionPayment__figure').offset().top;
-        if (top2 > offset - 200 && top2 < offset + 300){
+        if($('*').is('.sectionPayment__figure')){
+            var offset = $('.sectionPayment__figure').offset().top;
+            if (top2 > offset - 200 && top2 < offset + 300){
 
-            var scrollWal2 = (top2-offset)/4;
-            $('.sectionPayment__figure').css({'transform':'translateY(' + scrollWal2 + 'px)'});
+                var scrollWal2 = (top2-offset)/4;
+                $('.sectionPayment__figure').css({'transform':'translateY(' + scrollWal2 + 'px)'});
+            }
         }
     }
 }

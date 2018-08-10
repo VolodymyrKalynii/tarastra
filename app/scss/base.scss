@@ -27,7 +27,7 @@ p {
     font-size: 22px;
     font-weight: 300;
     line-height: 1.25;
-
+	margin-bottom: 15px;
 	@include xs-block() {
 		font-size: 20px;
 	}
@@ -56,10 +56,12 @@ html,
 body {
   height: 100%;
 
-	&.open-mobile{
-		position: relative;
-		width: 100%;
-		overflow: hidden;
+	@include md-block(){
+		&.open-mobile{
+			position: relative;
+			width: 100%;
+			overflow: hidden;
+		}
 	}
 }
 
@@ -230,18 +232,22 @@ button{
 	}
 }
 
-.feature-list {
-	padding: 64px 0;
-	margin: 10px 0;
+ul{
+	font-size: 18px;
+	font-weight: 300;
+	line-height: 1.67;
 	text-align: left;
-	display: inline-block;
-	&__li{
+	list-style: none;
+	padding: 0;
+	margin:18px 0;
+
+	li{
 		padding-left: 15px;
 		text-indent: -.7em;
 		font-size: 18px;
-    	font-weight: 300;
+		font-weight: 300;
 		line-height: 1.67;
-		
+
 		&:before{
 			padding-right: 5px;
 			content: "\2022 ";
@@ -251,6 +257,12 @@ button{
 			color: #4da1ff;
 		}
 	}
+}
+
+.feature-list {
+	padding: 64px 0;
+	margin: 0;
+	display: inline-block;
 
 	@include xs-block() {
 		padding: 30px 0;

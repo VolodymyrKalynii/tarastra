@@ -19,7 +19,7 @@
 </head>
 
 <body class="main wrapper">
- <div class="loader">
+<div class="loader">
     <div class="loader__inner">
         <div class="loader__dot loader__dot-first"></div>
         <div class="loader__dot loader__dot-second"></div>
@@ -31,104 +31,137 @@
     <div class="container">
         <div class="header">
             <div class="header__left">
-                <img class="header__mainLogo" src="images/svg/tr-logo.svg" alt="TRASTRA.COM">
+                <a href="./index.html">
+                    <img class="header__mainLogo" src="images/svg/tr-logo.svg" alt="TRASTRA.COM">
+                </a>
             </div>
             <div class="header__right js-menuClose">
-                    <div class="header__mobLogoWrapp">
+                <div class="header__mobLogoWrapp">
+                    <a href="./index.html">
                         <img class="header__mobLogo" src="images/svg/tr-logo.svg" alt="TRASTRA.COM">
-                    </div>
-                    <a class="header__link" href="#crypto-wallets">BTC/ETH wallets</a>
-                    <a class="header__link" href="#iban-section">Payment Account</a>
-                    <a class="header__link" href="#payment">Payment Card</a>
-                    <a class="header__link" href="">About</a>
-                    <div class="header__cabBtns">
-                        <a class="header__link header__cabBtn " href="">
-                            <button class="header__cabBtnLogIn">
-                                <span class="btn__text">Log In</span>
-                                <span class="btn__rippleWrapp"></span>
-                            </button>
-                        </a>
-
-                        <a class="header__link header__cabBtn  " href="">
-                            <button class="btn btn-gradient header__cabBtnSignUp">
-                                <span class="btn__text">Sign Up</span>
-                                <span class="btn__rippleWrapp"></span>
-                            </button>
-                        </a>
-                    </div>
+                    </a>
                 </div>
+                <a class="header__link" href="#crypto-wallets">BTC/ETH wallets</a>
+                <a class="header__link" href="#iban-section">Payment Account</a>
+                <a class="header__link" href="#payment">Payment Card</a>
+                <a class="header__link" href="">About</a>
+                <div class="header__cabBtns">
+                    <a class="header__link header__cabBtn " href="">
+                        <button class="header__cabBtnLogIn">
+                            <span class="btn__text">Log In</span>
+                            <span class="btn__rippleWrapp"></span>
+                        </button>
+                    </a>
+
+                    <a class="header__link header__cabBtn  " href="">
+                        <button class="btn btn-gradient header__cabBtnSignUp">
+                            <span class="btn__text">Sign Up</span>
+                            <span class="btn__rippleWrapp"></span>
+                        </button>
+                    </a>
+                </div>
+            </div>
             <button class="header__open buttonRipple js-menuOpen">
-                <svg class="MuiSvgIcon03238 MuiIconButton03237" focusable="false" viewBox="0 0 24 24" aria-hidden="true">
+                <svg focusable="false" viewBox="0 0 24 24" aria-hidden="true">
                     <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
                 </svg>
             </button>
         </div>
-        <section id="main" class="section sectionMain">
+        <section id="cta-section" class="section sectionCta">
             <div class="section__wrapp clearfix">
                 <div class="section__content section__content-left">
-                    <h1 class="title sectionMain__title">Buy and sell crypto
-                        <br> with trusted banking</h1>
+                    <h1 class="title title-h2">What is TRASTRA</h1>
+                    <p class="sectionCta__text">Trastra is a blockchain personal banking that combines benefits of
+                        Bitcoin and Ethereum with traditional payment infrastructure.</p>
+                    <p class="sectionCta__text">This is a payment card and fully-featured banking application.</p>
+                    <p class="sectionCta__text">In the application, you can easily buy and sell bitcoins and ethereum
+                        and convert it into traditional money to spend with a payment card issued by VISA.</p>
                 </div>
                 <div class="section__content section__contentFloatedRight">
-                    <img class="sectionMain__macbookImg parallax-inner"
-                         src="./images/macbook_full.jpg">
-                </div>
-
-                <div class="section__content section__content-left">
-                    <p class="sectionMain__text"> We link digital money with
-                        <br> traditional finances </p>
-                    <a href="" class="link-none">
-                        <button class="btn btn-gradient btn-large">
-                            <span class="btn__text">Sign Up for Free</span>
-                            <span class="btn__rippleWrapp"></span>
-                        </button>
-                    </a>
-                </div>
-            </div>
-            <div class="section__bottom">
-                <div class="today">
-                    <div class="today__buyRate">Today
-                        <span class="today__name">Buy rate</span>
-                    </div>
-                    <div class="crypto">
-                        <strong class="crypto__btc">BTC</strong> 0 €
-                        <strong class="crypto__eth pl-32">ETH</strong> 0 €
-                    </div>
-                    <a href="#crypto-wallets" class="today__viewMore"> View More</a>
+                    <img class="sectionCta__cardImg parallax-inner" src="./images/card-img-block-1@2x.png">
                 </div>
             </div>
         </section>
-        <section id="payment" class="section sectionPayment">
+        <section id="special" class="section sectionSpecial">
             <div class="section__wrapp clearfix">
-                <div class="section__content section__content-right section__contentFloatedRight">
-                    <img class="comingsoon comingsoon-notFloat"
-                         src="./images/comingsoon.png"
-                         alt="Trastra Coming Soon">
-                    <h2 class="title title-h2">TRA<span class="bold">S</span>TRA Payment card </h2>
-                    <p> Linked to your Bitcoin or Ethreum wallet, </p>
-                    <p> withdraw funds in any ATM and </p>
-                    <p> make any online purchases</p>
-                </div>
-                <div class="section__content section__contentFloatedLeft">
-                    <figure class=" sectionPayment__figure  parallax-inner">
-                        <img src="./images/creditcard-03.png"
-                             alt="Get cash at any ATM from your BTC or ETH wallet with the help of TRASTRA card. Turn BTC to cash with TRASTRA">
-                    </figure>
-                </div>
-                <div class="section__content section__content-right section__contentFloatedRight">
-                    <div class="listWrapp">
-                        <ul class="feature-list">
-                            <li class="feature-list__li">Plastic and virtual cards in EUR, GBP, USD</li>
-                            <li class="feature-list__li">Spend your money anywhere without fees</li>
-                            <li class="feature-list__li">European region delivery</li>
-                        </ul>
+                <h1 class="title title-h2 sectionSpecial__title">What makes us special</h1>
+                <div class="sectionSpecial__items">
+                    <div class="sectionSpecial__item">
+                        <div class="sectionSpecial__icon">
+                            <img src="./images/svg/market-price-icon.svg"
+                                 alt="Exchange cryptocurrency with no hidden fees, the only fair market price for the transactions."
+                                 class="sectionSpecial__img">
+                        </div>
+                        <div class="sectionSpecial__info">
+                            <p class="sectionSpecial__infoTitle">Market Price</p>
+                            <ul class="sectionSpecial__infoList">
+                                <li class="sectionSpecial__infoLi">1% fee to buy cryptocurrency online</li>
+                                <li class="sectionSpecial__infoLi">Only blockchain fee for cryptocurrency transactions
+                                </li>
+                                <li class="sectionSpecial__infoLi">The price is always fair, no hidden fees</li>
+                            </ul>
+                        </div>
                     </div>
-                    <a href="" class="link-none">
-                        <button class="btn btn-gradient btn-large">
-                            <span class="btn__text">Order a Card</span>
-                            <span class="btn__rippleWrapp"></span>
-                        </button>
-                    </a>
+                    <div class="sectionSpecial__item">
+                        <div class="sectionSpecial__icon">
+                            <img src="./images/svg/shield-icon.svg"
+                                 alt="Transfer money using secure and encrypted technology from BTC or ETH wallets to an IBAN account."
+                                 class="sectionSpecial__img">
+                        </div>
+                        <div class="sectionSpecial__info">
+                            <p class="sectionSpecial__infoTitle">Advanced Security</p>
+                            <ul class="sectionSpecial__infoList">
+                                <li class="sectionSpecial__infoLi">SSL encryption</li>
+                                <li class="sectionSpecial__infoLi">Multi-Sig technology</li>
+                                <li class="sectionSpecial__infoLi">2-Factor authentication</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="sectionSpecial__item">
+                        <div class="sectionSpecial__icon">
+                            <img src="./images/svg/heart-icon.svg"
+                                 alt="Get help from TRASTRA support team whenever you need it via email or chat."
+                                 class="sectionSpecial__img">
+                        </div>
+                        <div class="sectionSpecial__info">
+                            <p class="sectionSpecial__infoTitle">Instant Help</p>
+                            <ul class="sectionSpecial__infoList">
+                                <li class="sectionSpecial__infoLi">8/5 Availability</li>
+                                <li class="sectionSpecial__infoLi">Email and chat support</li>
+                                <li class="sectionSpecial__infoLi">As easy as talking to a friend</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="team-section" class="section sectionTeam">
+            <div class="section__wrapp clearfix">
+                <div class="section__content section__content-left sectionTeam__left">
+                    <h1 class="title title-h2">Our Team</h1>
+                    <p class="">We make the best solutions for you</p>
+                    <img class="sectionTeam__img" src="./images/team_photo.jpg"
+                         alt="TRASTRA is a team of experts that are here to offer you the best experience.">
+                </div>
+                <div class="section__content section__contentFloatedRight sectionTeam__right">
+                    <div class="trComment">
+                        <div class="trComment__head">
+                            <div class="trComment__img">
+                                <img src="./images/roman-avatar.png" alt="user">
+                            </div>
+                            <div class="trComment__user">
+                                <p class="trComment__userName">Roman Potemkin</p>
+                                <p class="trComment__userPost">Product Owner &amp; CEO</p>
+                            </div>
+                        </div>
+                        <div class="trComment__body">
+                            <div class="trComment__quote">“</div>
+                            <p class="trComment__text"><i>We believe in the future of cryptocurrencies and have substantial expertise in
+                                blockchain, payments and banking.</i></p>
+                            <p class="trComment__text"><i>Our mission is to help people to manage cryptocurrencies as simple as traditional
+                                money and spend it in day to day life.</i></p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -233,16 +266,21 @@
 </div>
 
 <div class="cookiePop">
-    <p class="cookiePop__text">Hi there! We would like to use your cookies to ensure you get the best experience on our website. Please confirm you give us a permission. You can learn more about the information we gather in our <a class="cookiePop__textLink" href="" target="_blank">Cookies Policy</a></p>
+    <p class="cookiePop__text">Hi there! We would like to use your cookies to ensure you get the best experience on our
+        website. Please confirm you give us a permission. You can learn more about the information we gather in our <a
+                class="cookiePop__textLink" href="" target="_blank">Cookies Policy</a></p>
     <div class="cookiePop__buttons">
         <a class="cookiePop__link cookiePop__link-deny js-cookiePop" href="">Decline</a>
         <a class="cookiePop__link cookiePop__link-allow js-cookiePop" href="">I confirm</a>
     </div>
 </div>
 <button class="toTop btn btn-gradient">
-    <svg class="toTop__arrow" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path></svg>
+    <svg class="toTop__arrow" focusable="false" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path>
+    </svg>
     <span class="btn__rippleWrapp"></span>
 </button>
+
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/slick.min.js"></script>
 <script src="js/wow.min.js"></script>
