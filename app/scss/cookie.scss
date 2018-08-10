@@ -1,0 +1,77 @@
+.cookiePop{
+	position: fixed;
+	bottom:0;
+	left:0;
+	right:0;
+	z-index: 9999;
+	font-size: 16px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: rgb(255, 255, 255);
+	background-color: rgb(37, 46, 57);
+	padding:16px 25px;
+	font-family: Helvetica,Calibri,Arial,sans-serif;
+
+	&__text{
+		font-size: 16px;
+		margin-right: 10px;
+
+		&Link{
+			opacity: .8;
+			color: #fff;
+
+			&:hover{
+				opacity:1;
+			}
+		}
+	}
+
+	&__buttons{
+		min-width:220px;
+		display: flex;
+		align-items: center;
+		justify-content:space-between;
+	}
+
+	&__link{
+		font-weight: 700;
+		font-size: 14px;
+		text-decoration: none;
+		color: #fff;
+		padding:12px 10px;
+		text-align: center;
+
+		&-deny{
+			&:hover{
+				text-decoration: underline;
+			}
+		}
+		&-allow{
+			border-radius: 5px;
+			min-width: 140px;
+			background-color: rgb(20, 167, 208);
+			&:hover{
+				background-color: rgb(58, 205, 246);
+			}
+		}
+	}
+
+	@include sm-block() {
+		flex-wrap: wrap;
+		justify-content: center;
+
+		&__text{
+			margin-right: 0;
+		}
+
+		&__buttons{
+			margin-top: 16px;
+			width:100%;
+		}
+
+		&__link{
+			width:50%;
+		}
+	}
+}

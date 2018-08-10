@@ -3,21 +3,60 @@
   z-index:3;
   width:100%;
   height:100%;
-  background: #fefefe;
+  background: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index:10000;
   &__inner{
-    border: 4px solid $mainGrey;
-    border-radius: 50%;
-    border-top: 4px solid $Grey2;
-    width: 80px;
-    height: 80px;
-    animation: spin 1s linear infinite;
+    width: 117px;
+    height: 13px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    //animation: spin 1s linear infinite;
+  }
+
+  &__dot{
+    width: 13px;
+    height: 13px;
+    border-radius: 6.5px;
+    background: #0067af;
+    animation: wave 2.6s cubic-bezier(0.626, 0, 0, 1) infinite;
+
+    &-first{
+      animation-delay: -0.26s;
+    }
+    &-second{
+      animation-delay: -0.26s;
+    }
+    &-third{
+      animation-delay: -0.17333s;
+    }
+    &-fourth{
+      animation-delay: -0.08667s;
+    }
   }
 }
 
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+@keyframes wave {
+  0% {
+    transform: translateY(0px);
+  }
+  40% {
+    transform: translateY(0px);
+    background: #4da1ff;
+  }
+  60% {
+    background: rgba(77, 161, 255, 0.9);
+    transform: translateY(20px);
+  }
+  80% {
+    background: rgba(77, 161, 255, 0.7);
+    transform: translateY(-20px);
+  }
+  100% {
+    background: rgba(77, 161, 255, 0.5);
+    transform: translateY(0px);
+  }
 }

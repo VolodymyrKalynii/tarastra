@@ -89,6 +89,7 @@
     &Text{
       margin: 0;
       font-size: 14px;
+      color: rgba(4, 44, 71, 0.3);
     }
 
     @include sm-block() {

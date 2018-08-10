@@ -19,32 +19,48 @@
 </head>
 
 <body class="main wrapper">
-<!-- <div class="loader">
-    <div class="loader__inner"></div>
-</div> -->
+ <div class="loader">
+    <div class="loader__inner">
+        <div class="loader__dot loader__dot-first"></div>
+        <div class="loader__dot loader__dot-second"></div>
+        <div class="loader__dot loader__dot-third"></div>
+        <div class="loader__dot loader__dot-fourth"></div>
+    </div>
+</div>
 <div class="inner">
     <div class="container">
         <div class="header">
             <div class="header__left">
                 <img class="header__mainLogo" src="images/svg/tr-logo.svg" alt="TRASTRA.COM">
             </div>
-            <div class="header__inner js-menuClose">
-                <div class="header__right">
+            <div class="header__right js-menuClose">
                     <div class="header__mobLogoWrapp">
                         <img class="header__mobLogo" src="images/svg/tr-logo.svg" alt="TRASTRA.COM">
                     </div>
-                    <a class="header__link" href="">BTC/ETH wallets</a>
-                    <a class="header__link" href="">Payment Account</a>
-                    <a class="header__link" href="">Payment Card</a>
+                    <a class="header__link" href="#crypto-wallets">BTC/ETH wallets</a>
+                    <a class="header__link" href="#iban-section">Payment Account</a>
+                    <a class="header__link" href="#payment">Payment Card</a>
                     <a class="header__link" href="">About</a>
                     <div class="header__cabBtns">
-                        <a class="header__link header__cabBtn header__cabBtnLogIn" href="">Login</a>
-                        <a class="header__link header__cabBtn header__cabBtnSignUp btn btn-gradient" href="">Sign Up</a>
+                        <a class="header__link header__cabBtn " href="">
+                            <button class="header__cabBtnLogIn">
+                                <span class="btn__text">Log In</span>
+                                <span class="btn__rippleWrapp"></span>
+                            </button>
+                        </a>
+
+                        <a class="header__link header__cabBtn  " href="">
+                            <button class="btn btn-gradient header__cabBtnSignUp">
+                                <span class="btn__text">Sign Up</span>
+                                <span class="btn__rippleWrapp"></span>
+                            </button>
+                        </a>
                     </div>
                 </div>
-            </div>
-            <button class="header__open js-menuOpen">
-                <span class="header__openMiddle"></span>
+            <button class="header__open buttonRipple js-menuOpen">
+                <svg class="MuiSvgIcon03238 MuiIconButton03237" focusable="false" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
+                </svg>
             </button>
         </div>
         <section id="main" class="section sectionMain">
@@ -62,7 +78,10 @@
                     <p class="sectionMain__text"> We link digital money with
                         <br> traditional finances </p>
                     <a href="" class="link-none">
-                        <button class="btn btn-gradient btn-large " type="button">Sign Up for Free</button>
+                        <button class="btn btn-gradient btn-large">
+                            <span class="btn__text">Sign Up for Free</span>
+                            <span class="btn__rippleWrapp"></span>
+                        </button>
                     </a>
                 </div>
             </div>
@@ -75,9 +94,7 @@
                         <strong class="crypto__btc">BTC</strong> 0 €
                         <strong class="crypto__eth pl-32">ETH</strong> 0 €
                     </div>
-                    <div class="today__viewMore mt-64"> View More
-                        <div class="rectangle"></div>
-                    </div>
+                    <a href="#crypto-wallets" class="today__viewMore"> View More</a>
                 </div>
             </div>
         </section>
@@ -203,7 +220,9 @@
                         </ul>
                     </div>
                     <a href="" class="link-none">
-                        <button tabindex="0" class=" btn btn-gradient btn-large " type="button">Get Free Wallet
+                        <button class="btn btn-gradient btn-large">
+                            <span class="btn__text">Get Free Wallet</span>
+                            <span class="btn__rippleWrapp"></span>
                         </button>
                     </a>
                 </div>
@@ -396,7 +415,9 @@
                     </div>
                     <div>
                         <a href="" class="link-none">
-                            <button class=" btn btn-gradient btn-large" type="button">Open a Free Account
+                            <button class="btn btn-gradient btn-large">
+                                <span class="btn__text">Open a Free Account</span>
+                                <span class="btn__rippleWrapp"></span>
                             </button>
                         </a>
                     </div>
@@ -429,7 +450,10 @@
                         </ul>
                     </div>
                     <a href="" class="link-none">
-                        <button class="btn btn-gradient btn-large" type="button">Order a Card</button>
+                        <button class="btn btn-gradient btn-large">
+                            <span class="btn__text">Order a Card</span>
+                            <span class="btn__rippleWrapp"></span>
+                        </button>
                     </a>
                 </div>
             </div>
@@ -470,7 +494,10 @@
                         </ul>
                     </div>
                     <a href="" class="link-none">
-                        <button class=" btn btn-gradient btn-large" type="button">Try Now for Free</button>
+                        <button class="btn btn-gradient btn-large">
+                            <span class="btn__text">Try Now for Free</span>
+                            <span class="btn__rippleWrapp"></span>
+                        </button>
                     </a>
                 </div>
             </div>
@@ -510,8 +537,9 @@
                 <p class="sectionPartners__text">We offer you a powerful solution to fulfill your crypto needs</p>
                 <div class="sectionPartners__btnWrapp">
                     <a href="" class="link-none">
-                        <button tabindex="0" class="btn btn-gradient btn-large"
-                                type="button">Try Now for Free
+                        <button class="btn btn-gradient btn-large">
+                            <span class="btn__text">Try Now for Free</span>
+                            <span class="btn__rippleWrapp"></span>
                         </button>
                     </a>
                 </div>
@@ -631,8 +659,9 @@
         <a class="cookiePop__link cookiePop__link-allow js-cookiePop" href="">I confirm</a>
     </div>
 </div>
-<button class="toTop">
+<button class="toTop btn btn-gradient">
     <svg class="toTop__arrow" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path></svg>
+    <span class="btn__rippleWrapp"></span>
 </button>
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/slick.min.js"></script>
