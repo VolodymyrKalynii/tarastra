@@ -879,6 +879,10 @@ button {
   font-weight: 700;
 }
 
+.crypto__eth {
+  color: #4da1ff;
+}
+
 .loader {
   position: fixed;
   z-index: 3;
