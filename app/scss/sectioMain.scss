@@ -192,6 +192,13 @@
       margin: 32px 0;
       text-align: center;
     }
+
+    @include sm-block() {
+
+      &__description{
+        font-size: 14px;
+      }
+    }
   }
 
   &Cta{
@@ -210,6 +217,8 @@
     }
 
     @include md-block() {
+      margin-top: 20px;
+
       &__text{
         max-width: initial;
       }
@@ -218,6 +227,13 @@
         max-width: 80%;
         display: block;
         margin:0 auto 20px;
+      }
+    }
+
+
+    @include sm-block() {
+      &__text{
+        font-size: 14px;
       }
     }
   }
@@ -429,7 +445,12 @@
       }
     }
 
+    @include md-block() {
+      margin-bottom: 40px;
+    }
+
     @include sm-block() {
+      margin-bottom: 20px;
 
       &__question{
         height: auto;

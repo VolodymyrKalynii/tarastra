@@ -267,4 +267,12 @@
 	@include md-block() {
 		margin: 30px auto 0;
 	}
+
+	@include sm-block() {
+		max-width: 280px;
+
+		p{
+			font-size: 14px;
+		}
+	}
 }

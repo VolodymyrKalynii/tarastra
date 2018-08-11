@@ -2265,6 +2265,11 @@ ul li:before {
     display: block;
   }
 
+  .header {
+    height: 56px;
+    padding-top: 0;
+  }
+
   .header__overlay {
     background-color: rgba(0, 0, 0, 0.5);
     opacity: 0;
@@ -2331,6 +2336,7 @@ ul li:before {
         -ms-flex-direction: column;
             flex-direction: column;
     width: 300px;
+    height: 100%;
     min-height: 430px;
     padding: 0;
     background: #fff;
@@ -2429,6 +2435,10 @@ ul li:before {
     text-align: center;
   }
 
+  .sectionCta {
+    margin-top: 20px;
+  }
+
   .sectionCta__text {
     max-width: initial;
   }
@@ -2464,6 +2474,10 @@ ul li:before {
     display: flex;
   }
 
+  .sectionContact {
+    margin-bottom: 40px;
+  }
+
   .comingsoon {
     margin: 0 auto;
     display: block;
@@ -2494,6 +2508,10 @@ ul li:before {
     font-size: 40px;
   }
 
+  .title-h2 {
+    font-size: 28px;
+  }
+
   .title-h3 {
     font-size: 22px;
   }
@@ -2508,6 +2526,14 @@ ul li:before {
         -ms-transform: scale(1);
             transform: scale(1);
     overflow-x: auto;
+  }
+
+  .sectionPartners__description {
+    font-size: 14px;
+  }
+
+  .sectionCta__text {
+    font-size: 14px;
   }
 
   .sectionSpecial__item {
@@ -2538,6 +2564,10 @@ ul li:before {
     font-size: 16px;
   }
 
+  .sectionContact {
+    margin-bottom: 20px;
+  }
+
   .sectionContact__question {
     height: auto;
     width: 280px;
@@ -2549,6 +2579,14 @@ ul li:before {
     font-size: 14px;
     white-space: normal;
     text-align: center;
+  }
+
+  .trComment {
+    max-width: 280px;
+  }
+
+  .trComment p {
+    font-size: 14px;
   }
 
   .cookiePop {
@@ -2618,11 +2656,15 @@ ul li:before {
 
 @media screen and (max-width: 480px) {
   p {
-    font-size: 20px;
+    font-size: 16px;
   }
 
   .title {
     font-size: 32px;
+  }
+
+  .title-h2 {
+    font-size: 28px;
   }
 
   .title-h3 {
