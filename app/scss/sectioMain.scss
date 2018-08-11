@@ -4,8 +4,50 @@
   position: relative;
   z-index:1;
 
+  &__content{
+    display: inline-block;
+    max-width: 50%;
+    width:100%;
+    position: relative;
+
+    &-left{
+      padding: 0 0 0 10vw;
+    }
+
+    &-right{
+      padding: 0 10vw 0 0;
+      text-align: right;
+    }
+
+    &FloatedRight{
+      float: right;
+      clear: right;
+    }
+
+    &FloatedLeft{
+      float: left;
+    }
+
+    @include md-block(){
+      max-width:100%;
+
+      &-left,&-right{
+        text-align: center;
+        padding:0 10px;
+      }
+      &FloatedRight,&FloatedLeft{
+        float: none;
+        padding:0 10px;
+      }
+    }
+  }
+
+  &__bottom{
+    clear: both;
+  }
+
   &Main {
-    padding-top: 15vh;
+    padding-top: 90px;
 
     &__text {
       font-size: 24px;
@@ -153,6 +195,10 @@
   }
 
   &Cta{
+    display: flex;
+    align-items: center;
+    margin-top: 70px;
+
     &__text{
       font-size: 18px;
       margin-bottom: 20px;
@@ -161,6 +207,18 @@
 
     &__cardImg{
       max-width: 80%;
+    }
+
+    @include md-block() {
+      &__text{
+        max-width: initial;
+      }
+
+      &__cardImg{
+        max-width: 80%;
+        display: block;
+        margin:0 auto 20px;
+      }
     }
   }
 
@@ -207,56 +265,204 @@
       font-weight: 400;
       color: $mainColor;
     }
+
+    @include md-block() {
+
+      &__items{
+        max-width: 670px;
+        margin: 0 auto;
+      }
+
+      &__item{
+        margin-left: 0!important;
+      }
+    }
+
+    @include sm-block() {
+
+      &__item{
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      &__infoTitle{
+        font-size: 30px;
+      }
+
+      &__icon{
+        width: 100px;
+        min-width: 100px;
+        height: 100px;
+        margin-right: 0;
+        margin-bottom: 20px;
+        padding: 30px 27px 27px 27px;
+      }
+
+      &__infoLi{
+        text-align: center;
+        font-size: 16px;
+      }
+    }
+
+    @include xs-block() {
+
+      &__infoTitle{
+        font-size: 24px;
+      }
+    }
   }
 
   &Team{
+
+    &:after{
+      content: '';
+      position: absolute;
+      height: 1px;
+      width: 80vw;
+      margin-left: -40vw;
+      left: 50%;
+      bottom: 0;
+      background-color: #eaf3fe;
+    }
+
+    &__left{
+      max-width:58%;
+    }
+
+    &__right{
+      max-width: 42%;
+    }
 
     &__img{
       margin-left: -10vw;
       max-width: calc(100% + 5vw);
     }
-  }
 
-  &__content{
-    display: inline-block;
-    max-width: 50%;
-    width:100%;
-    position: relative;
-
-    &-left{
-      padding: 0 0 0 10vw;
-    }
-
-    &-right{
-      padding: 0 10vw 0 0;
-      text-align: right;
-    }
-
-    &FloatedRight{
-      float: right;
-      clear: right;
-    }
-
-    &FloatedLeft{
-      float: left;
-    }
-
-    @include md-block(){
-      max-width:100%;
-
-      &-left,&-right{
-        text-align: center;
-        padding:0 10px;
-      }
-      &FloatedRight,&FloatedLeft{
-        float: none;
-        padding:0 10px;
+    @include md-block() {
+      &__img{
+        margin-left: 0vw;
+        max-width: 100%;
       }
     }
   }
 
-  &__bottom{
-    clear: both;
+  &Contact{
+
+    margin-bottom: 10vh;
+    &__inner{
+      height:530px;
+      @include md-block() {
+        display: none;
+      }
+    }
+
+    &__map{
+      margin-top: 40px;
+      background-color: #eaf3fe;
+      background-size: cover;
+    }
+
+    &__mobileMap{
+      padding: 20px 15px 90px;
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      @include md-block() {
+        display: flex;
+      }
+    }
+
+    &__MapAddress{
+      width: 350px;
+      padding: 20px 25px;
+      border-radius: 18px;
+      background-color: rgba(255, 255, 255, 0.9);
+      box-shadow: 1px 3px 17px 0 rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
+    &__MapTitle{
+      font-size: 24px;
+      font-weight: normal;
+      color: $mainColor;
+      font-family:  Montserrat, Roboto, "Helvetica Neue";
+      margin-bottom: 0;
+    }
+
+    &__addressText{
+      font-size: 18px;
+      line-height: 1.67;
+      font-family:  Montserrat, Roboto, "Helvetica Neue";
+      margin-bottom: 0;
+    }
+
+    &__country{
+      font-weight: 500;
+      font-family:  Montserrat, Roboto, "Helvetica Neue";
+    }
+
+    &__question{
+      position: absolute;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 100px;
+      transform: translate(-50%, -50px);
+      left: 50%;
+      padding: 20px;
+      border-radius: 6px;
+      background-color: #ffffff;
+      box-shadow: 0 0 7px 3px rgba(0, 0, 0, 0.1);
+
+      &Text{
+        font-size: 24px;
+        white-space: nowrap;
+        margin-bottom: 0;
+      }
+
+      &Link{
+        font-weight: 500;
+        text-decoration: none;
+      }
+    }
+
+    @include sm-block() {
+
+      &__question{
+        height: auto;
+        width: 280px;
+        padding: 15px 10px;
+        margin-top: 20px;
+
+        &Text{
+          font-size: 14px;
+          white-space: normal;
+          text-align: center;
+        }
+      }
+    }
+
+    @include xs-block() {
+      &__mobileMap{
+        padding-bottom: 60px;
+      }
+
+      &__MapAddress{
+        width: 280px;
+        padding: 15px;
+      }
+
+      &__MapTitle{
+        font-size: 18px;
+      }
+
+      &__addressText{
+        font-size: 14px;
+      }
+    }
   }
 }
 
@@ -323,7 +529,5 @@
     color: #4da1ff;
   }
 }
-
-
 
 

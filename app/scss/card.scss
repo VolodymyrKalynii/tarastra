@@ -263,4 +263,8 @@
 		padding-left: 25px;
 		margin-bottom: 15px;
 	}
+
+	@include md-block() {
+		margin: 30px auto 0;
+	}
 }

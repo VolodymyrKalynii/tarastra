@@ -32,7 +32,7 @@ $(document).ready(function(){
     $('.js-menuOpen').click(function (e) {
         e.preventDefault();
         $('html').addClass('open-mobile');
-        $('.header__right').addClass('header__right-open');
+        $('.header__inner').addClass('header__inner-open');
         $('.header').append('<div class="header__overlay"></div>');
         setTimeout(function () {
             $('.header__overlay').addClass('header__overlay-displayed');
@@ -42,7 +42,7 @@ $(document).ready(function(){
     //Закрытие меню на адаптиве
     $('html').on('click', '.header__overlay', function () {
         $('html').removeClass('open-mobile');
-        $('.header__right').removeClass('header__right-open');
+        $('.header__inner').removeClass('header__inner-open');
         $('.header__overlay').removeClass('header__overlay-displayed');
         setTimeout(function () {
             $('.header__overlay').remove();

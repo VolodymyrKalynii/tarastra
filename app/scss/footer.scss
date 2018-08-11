@@ -36,6 +36,7 @@
   }
 
   li{
+    padding-left: 0;
     &:before{
       display: none;
     }
@@ -46,7 +47,8 @@
     text-decoration: none;
     margin: 5px 0;
     display: block;
-
+    text-indent: 0;
+    font-size: 14px;
     &:hover{
       color: #4da1ff;
     }

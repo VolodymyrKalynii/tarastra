@@ -257,6 +257,18 @@ ul{
 			color: #4da1ff;
 		}
 	}
+
+	@include sm-block() {
+		 li{
+			 font-size: 16px;
+		 }
+	}
+
+	@include xs-block() {
+		li{
+			font-size: 12px;
+		}
+	}
 }
 
 .feature-list {
@@ -342,6 +354,14 @@ ul{
 		width:24px;
 		height:24px;
 		fill: #fff;
+	}
+
+	@include md-block(){
+		left: 15px;
+		bottom: 15px;
+
+		width: 36px;
+		height: 36px;
 	}
 }
 
