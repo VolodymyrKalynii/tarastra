@@ -108,6 +108,20 @@ $(document).ready(function(){
             scrollTop: h.offset().top - 70
         },400);
     });
+
+    $('[data-openTab]').on('click', function (e) {
+        $('[data-openTab]').removeClass('blogTabs__tab-active');
+        $(this).addClass('blogTabs__tab-active');
+    });
+
+
+    $('.faqSearch__input').on('focus', function (e) {
+       $(this).closest('.faqSearch__inner').addClass('faqSearch__inner-focus');
+    });
+    $('.faqSearch__input').focusout('focus', function (e) {
+        $(this).closest('.faqSearch__inner').removeClass('faqSearch__inner-focus');
+    });
+
 });
 
 //Проверка при загрузке и ресайзе давать ли клас кнопке меню, и анимировать ли картинки

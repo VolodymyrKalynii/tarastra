@@ -36,6 +36,7 @@ p {
 a {
 	color: rgba(77, 161, 255, 0.9);
 	outline: none;
+	text-decoration: none;
 }
 
 *:active, *:hover, *:focus {
@@ -120,9 +121,33 @@ button{
 	font-weight: 500;
 	position: relative;
 
+	span{
+		color: #0067af;
+
+	}
+
+	&:hover{
+		background-color: #cae3f9;
+	}
+
+	&-disabled,&[disabled]{
+		box-shadow: none;
+		background-color: #f4f8f9;
+		cursor: default;
+		pointer-events: none;
+
+		span{
+			color: rgba(4, 44, 71, 0.3);
+		}
+	}
+
 	&-gradient{
 		background-image: linear-gradient(76deg, #0067af, #00aad7);
 		opacity: 1;
+
+		span{
+			color: #ffffff;
+		}
 		&:hover:not(disabled) {
 			opacity: 0.8;
 		}
@@ -391,4 +416,17 @@ ul{
 
 .padding-top-8, .pt-8 {
 	padding-top: 8px;
+}
+
+.hidden-md{
+	@include md-block() {
+		display: none!important;
+	}
+}
+
+.visible-md{
+	display: none!important;
+	@include md-block() {
+		display: block!important;
+	}
 }
