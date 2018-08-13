@@ -325,6 +325,10 @@ body {
   background: #fff;
 }
 
+.container-faq {
+  overflow: visible;
+}
+
 * {
   outline: none;
   -webkit-box-sizing: border-box;
@@ -342,7 +346,6 @@ p {
 a {
   color: rgba(77, 161, 255, 0.9);
   outline: none;
-  text-decoration: none;
 }
 
 *:active,
@@ -576,6 +579,10 @@ button {
   text-align: center;
 }
 
+.italic {
+  font-style: italic;
+}
+
 .link-none {
   text-decoration: none;
 }
@@ -779,6 +786,23 @@ ul li:before {
   display: none !important;
 }
 
+.svg {
+  fill: currentColor;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  -webkit-transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  -o-transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
+}
+
 .header {
   position: fixed;
   display: -webkit-box;
@@ -859,6 +883,10 @@ ul li:before {
   padding: 0;
   cursor: pointer;
   display: none;
+}
+
+.header__open svg {
+  fill: rgba(0, 0, 0, 0.54);
 }
 
 .header__mobLogoWrapp {
@@ -1716,9 +1744,6 @@ ul li:before {
   margin-right: 7.5px;
   width: -webkit-calc(25% - 15px);
   width: calc(25% - 15px);
-  top: 66px;
-  position: -webkit-sticky;
-  position: sticky;
 }
 
 .faqContent__sidebarInner {
@@ -1729,6 +1754,10 @@ ul li:before {
   max-height: -webkit-calc(100vh - 90px);
   max-height: calc(100vh - 90px);
   overflow-y: auto;
+  max-width: 216px;
+  top: 66px;
+  position: -webkit-sticky;
+  position: sticky;
 }
 
 .faqContent__sidebarItem {
@@ -1778,6 +1807,352 @@ ul li:before {
   margin-bottom: 10px;
   padding: 0 24px;
   font-weight: 500;
+}
+
+.faqItems__panel {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(151, 151, 151, 0.1);
+}
+
+.faqItems__panel-opened .faqItems__panelTitleArrowSvg {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.faqItems__panel-opened .faqItems__panelTitleText {
+  color: #4da1ff;
+}
+
+.faqItems__panelTitle {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 24px 0 24px;
+  position: relative;
+  min-height: 48px;
+  -webkit-transition: min-height 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  -o-transition: min-height 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: min-height 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  cursor: pointer;
+}
+
+.faqItems__panelTitleText {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+.faqItems__panelTitleArrow {
+  font-size: 20px;
+  font-weight: 500;
+  width: 48px;
+  color: rgba(0, 0, 0, 0.54);
+  height: 48px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.faqItems__panelTitleArrowSpan {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.faqItems__panelTitleArrowSvg {
+  width: 24px;
+  height: 24px;
+  fill: rgba(0, 0, 0, 0.54);
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
+}
+
+.faqItems__panelContent {
+  padding: 8px 24px 24px;
+  display: none;
+}
+
+.faqItems__panel p {
+  margin: 10px 0;
+  display: inline-block;
+  width: 100%;
+}
+
+.faqItems__panel ul li {
+  font-size: 14px;
+  font-weight: 400;
+  margin: 5px 0;
+}
+
+.faqItems__panel a {
+  text-decoration: underline;
+}
+
+.faqItems__panel ol {
+  width: auto;
+  font-size: 14px;
+  line-height: 1.78;
+  font-weight: 300;
+  padding-left: 1em;
+}
+
+.faqItems__panelText {
+  font-size: 14px;
+  line-height: 1.78;
+  font-weight: 400;
+}
+
+.faqItems__panelText-par {
+  padding-left: 30px;
+}
+
+.faqItems__panelTextUnavailable {
+  color: #cc0000;
+  font-size: 18px;
+  text-align: center;
+  padding: 20px 0;
+  font-weight: 400;
+}
+
+.faqItems__panelImg {
+  margin: 20px 0;
+}
+
+.faqItems__panelImgDesc {
+  font-size: 10px;
+  font-style: italic;
+  text-align: center;
+}
+
+.faqItems__panelImgDesc span {
+  font-weight: 400;
+}
+
+.faqItems__panelSource {
+  font-size: 10px;
+}
+
+.faqItems__panelSource span {
+  font-weight: 400;
+}
+
+.articleHeader {
+  margin-top: 78px;
+}
+
+.articleHeader__controls {
+  padding: 0 24px;
+}
+
+.articleHeader__link {
+  height: 78px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #0067af;
+}
+
+.articleHeader__svg {
+  margin-right: 10px;
+}
+
+.articleHeader__img {
+  padding: 40px 0;
+  height: 520px;
+  background: url(../images/header-bg-blog@2x.png) no-repeat center;
+  -webkit-background-size: cover;
+          background-size: cover;
+}
+
+.articleWrapper {
+  margin-top: -150px;
+  padding: 0 24px;
+  margin-bottom: 20px;
+}
+
+.articleMain {
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto;
+  -webkit-border-radius: 6px;
+          border-radius: 6px;
+  background-color: #ffffff;
+  -webkit-box-shadow: 0 0 7px 3px rgba(0, 103, 175, 0.1);
+          box-shadow: 0 0 7px 3px rgba(0, 103, 175, 0.1);
+}
+
+.articleMain__text {
+  font-size: 14px;
+  line-height: 1.78;
+  margin: 10px 0;
+}
+
+.articleMain__header {
+  height: 78px;
+  padding: 0 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: 1px solid rgba(151, 151, 151, 0.1);
+}
+
+.articleMain__meta {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  color: rgba(4, 44, 71, 0.5);
+  font-size: 14px;
+}
+
+.articleMain__metaDate {
+  display: inline-block;
+  min-width: 140px;
+  border-right: 1px solid rgba(151, 151, 151, 0.1);
+  padding: 0 15px 0 0;
+  line-height: 24px;
+}
+
+.articleMain__metaAuthor {
+  padding: 0 15px;
+  line-height: 24px;
+}
+
+.articleMain__tag .blogList__itemBadge {
+  position: inherit;
+}
+
+.articleMain__wrapper {
+  padding: 0 24px 40px 24px;
+}
+
+.articleMain__body {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 860px;
+  padding-bottom: 20px;
+}
+
+.articleMain__title {
+  font-size: 42px;
+  font-weight: 400;
+  margin: 40px 0;
+  color: #0067af;
+}
+
+.articleMain__subtitle {
+  position: relative;
+}
+
+.articleMain__descr {
+  font-weight: 300;
+  text-align: left;
+  color: #062d46;
+  font-size: 24px;
+}
+
+.articleSocial {
+  position: absolute;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  color: #0067af;
+}
+
+.articleSocial-left {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  top: 0px;
+  left: -60px;
+}
+
+.articleSocial-base {
+  position: relative;
+  left: -4px;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 860px;
+}
+
+.articleSocial-base span {
+  margin-left: 10px;
+}
+
+.articleMore {
+  max-width: 1380px;
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+}
+
+.articleMore__title {
+  font-size: 42px;
+  font-weight: 400;
+  margin: 30px 0;
+  text-align: center;
+}
+
+.articleFooter {
+  max-width: 1380px;
+  width: 100%;
+  margin: 30px auto 0;
+  padding: 0 24px;
+  height: 150px;
+  background: url(../images/svg/article-footer.svg) no-repeat center 40px;
 }
 
 .loader {
@@ -2278,6 +2653,14 @@ ul li:before {
   margin-bottom: 15px;
 }
 
+.tr-linkedin-icon {
+  color: #1178b3;
+}
+
+.tr-facebook-icon {
+  color: #3a5ba0;
+}
+
 .cookiePop {
   position: fixed;
   bottom: 0;
@@ -2752,6 +3135,13 @@ ul li:before {
   }
 }
 
+@media screen and (max-width: 1200px) {
+  .faqContent__sidebarItem {
+    margin: 10px 0;
+    font-size: 14px;
+  }
+}
+
 @media screen and (max-width: 1180px) {
   .sectionCW__trCardWrapp {
     -webkit-transform: scale(0.8);
@@ -2770,6 +3160,24 @@ ul li:before {
   }
 }
 
+@media screen and (max-width: 1024px) {
+  .articleSocial {
+    position: relative;
+  }
+
+  .articleSocial-left {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    top: inherit;
+    left: inherit;
+    margin-top: 20px;
+    margin-left: -5px;
+  }
+}
+
 @media screen and (max-width: 992px) {
   html.open-mobile,
   body.open-mobile {
@@ -2779,10 +3187,7 @@ ul li:before {
   }
 
   .toTop {
-    left: 15px;
-    bottom: 15px;
-    width: 36px;
-    height: 36px;
+    display: none !important;
   }
 
   .hidden-md {
@@ -2798,7 +3203,7 @@ ul li:before {
   }
 
   .header {
-    height: 56px;
+    height: 68px;
     padding-top: 0;
   }
 
@@ -3033,6 +3438,24 @@ ul li:before {
     height: initial;
   }
 
+  .faqWrapper {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  .faqSearch__wrapper {
+    max-width: 100%;
+  }
+
+  .faqContent__sidebar {
+    display: none;
+  }
+
+  .faqItems {
+    width: -webkit-calc(100% - 15px);
+    width: calc(100% - 15px);
+  }
+
   .trCard__Iban {
     max-width: 500px;
     margin: 20px auto 0;
@@ -3140,6 +3563,10 @@ ul li:before {
     height: 150px;
   }
 
+  .blogList__itemBadge {
+    font-size: 12px;
+  }
+
   .blogList__item-first {
     display: block;
   }
@@ -3163,6 +3590,73 @@ ul li:before {
     -webkit-justify-content: space-around;
         -ms-flex-pack: distribute;
             justify-content: space-around;
+  }
+
+  .faqSearch__inner {
+    font-size: 18px;
+    margin: 15px 0;
+  }
+
+  .faqSearch__svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .faqItems__itemTitle {
+    font-size: 24px;
+    padding: 0;
+  }
+
+  .faqItems__panel {
+    padding: 0;
+  }
+
+  .faqItems__panelTitle {
+    padding: 0;
+  }
+
+  .faqItems__panelTitleText {
+    font-size: 16px;
+  }
+
+  .articleHeader__link {
+    height: 48px;
+  }
+
+  .articleHeader__img {
+    height: 300px;
+  }
+
+  .articleWrapper {
+    margin-top: -78px;
+    padding: 0 24px;
+  }
+
+  .articleMain__meta {
+    font-size: 12px;
+  }
+
+  .articleMain__metaDate {
+    line-height: 18px;
+  }
+
+  .articleMain__metaAuthor {
+    line-height: 18px;
+  }
+
+  .articleMain__title {
+    font-size: 24px;
+    margin: 20px 0;
+  }
+
+  .articleMain__descr {
+    font-size: 16px;
+  }
+
+  .articleMore__title {
+    font-size: 24px;
+    padding: 0 20px;
+    text-align: center;
   }
 
   .trComment {
@@ -3238,6 +3732,12 @@ ul li:before {
   }
 }
 
+@media screen and (max-width: 600px) {
+  .blogHeader__content {
+    margin-left: 20px;
+  }
+}
+
 @media screen and (max-width: 480px) {
   p {
     font-size: 16px;
@@ -3261,6 +3761,10 @@ ul li:before {
 
   .feature-list {
     padding: 30px 0;
+  }
+
+  .header {
+    height: 56px;
   }
 
   .sectionMain__text {
@@ -3288,12 +3792,27 @@ ul li:before {
     font-size: 14px;
   }
 
+  .blogList {
+    padding: 24px 10px 0;
+  }
+
   .blogPagination__list {
     margin-top: 15px;
     -webkit-box-ordinal-group: 2;
     -webkit-order: 1;
         -ms-flex-order: 1;
             order: 1;
+  }
+
+  .articleMain__header {
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    padding: 5px 10px;
+  }
+
+  .articleSocial-base span {
+    font-size: 11px;
   }
 
   .trCard__Iban {

@@ -8,7 +8,7 @@ function loader() {
 setTimeout(loader, 000);
 
 // $(window).on('load', function() {
-//     $('.loader').fadeOut().fadeOut('slow');
+//     $('.loader').fadeOut('slow');
 // });
 
 //# Работа лоадера
@@ -49,7 +49,7 @@ $(document).ready(function(){
         }, 500);
     });
 
-    var topMenu = $('.faqContent__sidebarInner').offset().top;
+
     //Проверка при скролле страницы
     $(document).on('scroll',function(){
         //Проверяем кнопку "наверх"
@@ -58,13 +58,6 @@ $(document).ready(function(){
         //Анимация каринок вверх-вниз
         animateElements();
 
-
-        if($(document).scrollTop() > topMenu) {
-            $('.faqContent__sidebarInner').addClass('faqContent__sidebarInner-fixed');
-        }
-        else {
-            $('.faqContent__sidebarInner').removeClass('faqContent__sidebarInner-fixed');
-        }
 
         onScrollFaq();
     });
@@ -137,22 +130,6 @@ $(document).ready(function(){
         $(this).next().slideToggle();
         $(this).closest('.faqItems__panel').toggleClass('faqItems__panel-opened');
     });
-
-    $(".faqContent__sidebarLink[href*=\\#]").click(function(e){
-        e.preventDefault();
-        $(document).off("scroll");
-        $(menu_selector + " a.active").removeClass("active");
-        $(this).addClass("active");
-        var hash = $(this).attr("href");
-        var target = $(hash);
-        $("html, body").animate({
-            scrollTop: target.offset().top
-        }, 500, function(){
-            window.location.hash = hash;
-            $(document).on("scroll", onScrollFaq);
-        });
-    });
-
 });
 
 //Проверка при загрузке и ресайзе давать ли клас кнопке меню, и анимировать ли картинки
@@ -165,13 +142,13 @@ function onScrollFaq(){
     $(menu_selector + " a").each(function(){
         var hash = $(this).attr("href");
         var target = $(hash);
-        if (target.position().top <= scroll_top && target.position().top + target.outerHeight() > scroll_top) {
-            $(menu_selector + " a.active").removeClass("active");
-            $(this).addClass("active");
-        } else {
-            $(this).removeClass("active");
-        }
-    });
+        if (target.position().top <= scroll_top + 150 && target.position().top + target.outerHeight() > scroll_top - 50 || target.position().top >= scroll_top+100 && $(this).closest('li').index() == 0) {
+            $(menu_selector + " a.faqContent__sidebarLink-active").removeClass("faqContent__sidebarLink-active");
+            $(this).addClass("faqContent__sidebarLink-active");
+        }  else {
+        $(this).removeClass("faqContent__sidebarLink-active");
+    }
+});
 }
 
 

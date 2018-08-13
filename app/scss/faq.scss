@@ -1,0 +1,328 @@
+.faq{
+
+  &Wrapper{
+    max-width: 66.6667%;
+    margin: 86px auto 50px;
+    padding: 0 24px;
+
+    @include md-block() {
+      max-width: 100%;
+      padding: 0 10px;
+    }
+  }
+
+  &Search{
+    display: flex;
+    justify-content:flex-end;
+
+    &__wrapper{
+      padding: 8px;
+      max-width: 75%;
+      width: 100%;
+
+      @include md-block() {
+        max-width: 100%;
+      }
+    }
+
+    &__inner{
+      width: 100%;
+      font-size: 28px;
+      margin: 50px 0;
+      color: rgba(0, 0, 0, 0.87);
+      display: inline-flex;
+      position: relative;
+      align-items: baseline;
+      font-family: Montserrat, Roboto, sans-serif;
+
+      &:before{
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 1px;
+        content: "";
+        position: absolute;
+        transition: background-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        pointer-events: none;
+        background-color: rgba(0, 0, 0, 0.42);
+      }
+
+      &:hover{
+        &:before{
+          background-color: #042c47;
+        }
+      }
+
+      @include sm-block() {
+        font-size: 18px;
+        margin: 15px 0;
+      }
+
+      &.faqSearch__inner-focus{
+        &:after{
+          left: 0;
+          right: 0;
+          bottom: 0;
+          height: 1px;
+          content: "";
+          position: absolute;
+          transition: background-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+          pointer-events: none;
+          background-color: #4da1ff;
+        }
+      }
+    }
+
+    &__icon{
+      margin-right: 8px;
+    }
+
+    &__svg{
+      position: relative;
+      bottom: -7px;
+      width: 32px;
+      height: 32px;
+      fill: rgba(4, 44, 71, 0.5);
+
+      @include sm-block() {
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    &__input{
+      font: inherit;
+      width: 100%;
+      border: 0;
+      margin: 0;
+      padding: 6px 0 7px;
+      display: block;
+      min-width: 0;
+      box-sizing: content-box;
+      background: none;
+      vertical-align: middle;
+      -webkit-tap-highlight-color: transparent;
+    }
+  }
+
+  &Content{
+
+    @include row-flex();
+    &__sidebar{
+      @include col();
+      @include size(6);
+
+
+
+      &Inner{
+        width: auto;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        max-height: calc(100vh - 90px);
+        overflow-y: auto;
+        max-width: 216px;
+        top: 66px;
+        position: sticky;
+
+      }
+
+      &Item{
+        list-style: none;
+        margin: 30px 0;
+        padding: 0;
+        text-indent: 0;
+
+        &:before{
+          display: none;
+        }
+        @media screen and (max-width: 1200px){
+          margin: 10px 0;
+          font-size: 14px;
+        }
+      }
+
+      &Link{
+        text-decoration: none;
+        color: rgba(4, 44, 71, 0.5);
+
+        &:hover{
+          color: #4da1ff;
+        }
+
+        &-active{
+          color: #4da1ff;
+          font-weight: 500;
+          transition-delay: 0.5s;
+        }
+      }
+
+      @include md-block() {
+        display: none;
+      }
+    }
+  }
+
+  &Items{
+    @include col();
+    @include size(18);
+    @include size-md(24);
+    &__item{
+      margin-top: 20px;
+
+      &Title{
+        font-size: 36px;
+        margin-bottom: 10px;
+        padding: 0 24px;
+        font-weight: 500;
+
+        @include sm-block() {
+          font-size: 24px;
+          padding: 0;
+        }
+      }
+    }
+
+    &__panel{
+      box-shadow: none;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(151, 151, 151, 0.1);
+
+      &-opened{
+        .faqItems__panelTitleArrowSvg{
+          transform: rotate(180deg);
+        }
+
+        .faqItems__panelTitleText{
+          color: #4da1ff;
+        }
+      }
+
+      @include sm-block() {
+        padding: 0;
+      }
+
+      &Title{
+        display: flex;
+        padding: 0 24px 0 24px;
+        position: relative;
+        min-height: 48px;
+        transition: min-height 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+
+        @include sm-block() {
+          padding: 0;
+        }
+
+        &Text{
+          font-size: 20px;
+          font-weight: 500;
+          margin-bottom: 0;
+
+          @include sm-block() {
+            font-size: 16px;
+          }
+        }
+
+        &Arrow{
+          font-size: 20px;
+          font-weight: 500;
+          width: 48px;
+          color: rgba(0, 0, 0, 0.54);
+          height: 48px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          &Span{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+
+          &Svg{
+            width:24px;
+            height:24px;
+            fill: rgba(0, 0, 0, 0.54);
+            transition: all .3s;
+          }
+        }
+
+
+      }
+
+      &Content{
+        padding: 8px 24px 24px;
+        display: none;
+      }
+
+      p{
+        margin: 10px 0;
+        display: inline-block;
+        width: 100%;
+      }
+
+      ul{
+        li{
+          font-size: 14px;
+          font-weight: 400;
+          margin:5px 0;
+        }
+      }
+
+      a{
+        text-decoration: underline;
+      }
+
+      ol{
+        width: auto;
+        font-size: 14px;
+        line-height: 1.78;
+        font-weight: 300;
+        padding-left: 1em;
+      }
+
+      &Text{
+        font-size: 14px;
+        line-height: 1.78;
+        font-weight: 400;
+        &-par{
+          padding-left: 30px;
+        }
+
+        &Unavailable{
+          color: #cc0000;
+          font-size: 18px;
+          text-align: center;
+          padding:20px 0;
+          font-weight: 400;
+        }
+      }
+
+      &Img{
+        margin:20px 0;
+
+        &Desc{
+          font-size: 10px;
+          font-style: italic;
+          text-align: center;
+          //margin: 10px 0;
+
+          span{
+            font-weight: 400;
+          }
+        }
+      }
+
+      &Source{
+        font-size: 10px;
+
+        span{
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}

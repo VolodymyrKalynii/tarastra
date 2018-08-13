@@ -15,6 +15,10 @@ body{
     //max-width: 748px;
 
   }
+
+	&-faq{
+		overflow: visible;
+	}
 }
 
 *{
@@ -36,7 +40,7 @@ p {
 a {
 	color: rgba(77, 161, 255, 0.9);
 	outline: none;
-	text-decoration: none;
+	//text-decoration: none;
 }
 
 *:active, *:hover, *:focus {
@@ -429,4 +433,14 @@ ul{
 	@include md-block() {
 		display: block!important;
 	}
+}
+
+.svg{
+	fill: currentColor;
+	width: 24px;
+	height: 24px;
+	display: inline-block;
+	transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+	user-select: none;
+	flex-shrink: 0;
 }

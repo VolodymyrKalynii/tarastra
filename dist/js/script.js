@@ -8,7 +8,7 @@ function loader() {
 setTimeout(loader, 000);
 
 // $(window).on('load', function() {
-//     $('.loader').fadeOut().fadeOut('slow');
+//     $('.loader').fadeOut('slow');
 // });
 
 //# Работа лоадера
@@ -57,6 +57,9 @@ $(document).ready(function(){
 
         //Анимация каринок вверх-вниз
         animateElements();
+
+
+        onScrollFaq();
     });
 
     //Проверяем кнопку "наверх"
@@ -118,14 +121,36 @@ $(document).ready(function(){
     $('.faqSearch__input').on('focus', function (e) {
        $(this).closest('.faqSearch__inner').addClass('faqSearch__inner-focus');
     });
+
     $('.faqSearch__input').focusout('focus', function (e) {
         $(this).closest('.faqSearch__inner').removeClass('faqSearch__inner-focus');
     });
 
+    $('.faqItems__panelTitle').on('click', function () {
+        $(this).next().slideToggle();
+        $(this).closest('.faqItems__panel').toggleClass('faqItems__panel-opened');
+    });
 });
 
 //Проверка при загрузке и ресайзе давать ли клас кнопке меню, и анимировать ли картинки
 $(window).on('load resize', animateElements, toggleClassLogin);
+
+
+var menu_selector = ".faqContent__sidebarInner"; // Переменная должна содержать название класса или идентификатора, обертки нашего меню.
+function onScrollFaq(){
+    var scroll_top = $(document).scrollTop();
+    $(menu_selector + " a").each(function(){
+        var hash = $(this).attr("href");
+        var target = $(hash);
+        if (target.position().top <= scroll_top + 150 && target.position().top + target.outerHeight() > scroll_top - 50 || target.position().top >= scroll_top+100 && $(this).closest('li').index() == 0) {
+            $(menu_selector + " a.faqContent__sidebarLink-active").removeClass("faqContent__sidebarLink-active");
+            $(this).addClass("faqContent__sidebarLink-active");
+        }  else {
+        $(this).removeClass("faqContent__sidebarLink-active");
+    }
+});
+}
+
 
 //Функция анимации картинок
 function animateElements(){

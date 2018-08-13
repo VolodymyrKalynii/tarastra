@@ -49,10 +49,14 @@ gulp.task('build', ['clean', 'sass'], function() {
         .pipe(gulp.dest('dist/css'));
     var buildHtml = gulp.src('app/*.html')
         .pipe(gulp.dest('dist'));
+    var buildHtmlInf = gulp.src('app/article/*.html')
+        .pipe(gulp.dest('dist/article'));
     var buildJs = gulp.src('app/js/*.js')
         .pipe(gulp.dest('dist/js'));
     var buildImg = gulp.src('app/images/*')
         .pipe(gulp.dest('dist/images'));
+    var buildSvg = gulp.src('app/images/svg/*.*')
+        .pipe(gulp.dest('dist/images/svg'));
     var buildFonts = gulp.src('app/fonts/*')
         .pipe(gulp.dest('dist/fonts'));
 });
