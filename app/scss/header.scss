@@ -60,6 +60,10 @@
 		@include md-block() {
 			display: block;
 		}
+
+		svg{
+			fill:rgba(0, 0, 0, 0.54);
+		}
 	}
 
 	&__mobLogoWrapp{
@@ -76,7 +80,7 @@
 
 	@include md-block() {
 
-		height:56px;
+		height:68px;
 		padding-top: 0;
 
 		&__overlay{
@@ -101,6 +105,7 @@
 			padding: 17px 10px 15px 24px;
 			font-size: 13px;
 		}
+
 		&__mobLogoWrapp{
 			display: flex;
 			width:100%;
@@ -123,7 +128,6 @@
 				opacity:1;
 			}
 		}
-
 
 		&__right{
 			flex-direction: column;
@@ -166,5 +170,9 @@
 			width:100%;
 			font-size: 13px;
 		}
+	}
+
+	@include xs-block() {
+		height:56px;
 	}
 }

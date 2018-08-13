@@ -583,6 +583,10 @@
       color: #ffffff;
       max-width: 400px;
       margin-left: 20vw;
+
+      @media screen and (max-width: 600px){
+        margin-left: 20px;
+      }
     }
 
     &__title{
@@ -941,8 +945,7 @@
       @include col();
       @include size(6);
 
-      top: 66px;
-      position: sticky;
+
 
       &Inner{
         width: auto;
@@ -951,6 +954,11 @@
         padding: 0;
         max-height: calc(100vh - 90px);
         overflow-y: auto;
+        max-width: 216px;
+        &-fixed{
+          position: fixed;
+          top:50px;
+        }
       }
 
       &Item{
@@ -993,6 +1001,125 @@
         margin-bottom: 10px;
         padding: 0 24px;
         font-weight: 500;
+      }
+    }
+
+    &__panel{
+
+      &-opened{
+        .faqItems__panelTitleArrowSvg{
+          transform: rotate(180deg);
+        }
+
+        .faqItems__panelTitleText{
+          color: #4da1ff;
+        }
+      }
+
+      &Title{
+        display: flex;
+        padding: 0 24px 0 24px;
+        position: relative;
+        min-height: 48px;
+        transition: min-height 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+
+        &Text{
+          font-size: 20px;
+          font-weight: 500;
+          margin-bottom: 0;
+        }
+
+        &Arrow{
+          font-size: 20px;
+          font-weight: 500;
+          width: 48px;
+          color: rgba(0, 0, 0, 0.54);
+          height: 48px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          &Svg{
+            width:24px;
+            height:24px;
+            fill: rgba(0, 0, 0, 0.54);
+            transition: all .3s;
+          }
+        }
+      }
+
+      &Content{
+        padding: 8px 24px 24px;
+        display: none;
+      }
+
+      p{
+        margin: 10px 0;
+        display: inline-block;
+        width: 100%;
+      }
+
+      ul{
+        li{
+          font-size: 14px;
+          font-weight: 400;
+          margin:5px 0;
+        }
+      }
+
+      a{
+        text-decoration: underline;
+      }
+
+      ol{
+        width: auto;
+        font-size: 14px;
+        line-height: 1.78;
+        font-weight: 300;
+        padding-left: 1em;
+      }
+
+      &Text{
+        font-size: 14px;
+        line-height: 1.78;
+        font-weight: 400;
+        &-par{
+          padding-left: 30px;
+        }
+
+        &Unavailable{
+          color: #cc0000;
+          font-size: 18px;
+          text-align: center;
+          padding:20px 0;
+          font-weight: 400;
+        }
+      }
+
+      &Img{
+        margin:20px 0;
+
+        &Desc{
+          font-size: 10px;
+          font-style: italic;
+          text-align: center;
+          //margin: 10px 0;
+
+          span{
+            font-weight: 400;
+          }
+        }
+      }
+
+      &Source{
+        font-size: 10px;
+
+        span{
+          font-weight: 400;
+        }
       }
     }
   }

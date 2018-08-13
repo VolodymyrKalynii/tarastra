@@ -218,6 +218,10 @@ button{
 	text-align: center;
 }
 
+.italic{
+	font-style: italic;
+}
+
 .link-none{
 	text-decoration: none;
 }
@@ -390,11 +394,7 @@ ul{
 	}
 
 	@include md-block(){
-		left: 15px;
-		bottom: 15px;
-
-		width: 36px;
-		height: 36px;
+		display: none!important;
 	}
 }
 
