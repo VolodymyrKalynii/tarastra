@@ -103,6 +103,26 @@
       vertical-align: middle;
       -webkit-tap-highlight-color: transparent;
     }
+
+    &__clean{
+      align-self: center;
+      cursor: pointer;
+      display: none;
+      &-visible{
+        display: flex;
+      }
+      &Span{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      svg{
+        width:32px;
+        height:32px;
+        fill: rgba(4, 44, 71, 0.5);
+      }
+    }
   }
 
   &Content{
@@ -169,6 +189,7 @@
     @include size-md(24);
     &__item{
       margin-top: 20px;
+      padding-bottom: 20px;
 
       &Title{
         font-size: 36px;
@@ -189,6 +210,9 @@
       border-bottom: 1px solid rgba(151, 151, 151, 0.1);
 
       &-opened{
+        .faqItems__panelTitle{
+          transform: translateY(10px);
+        }
         .faqItems__panelTitleArrowSvg{
           transform: rotate(180deg);
         }
@@ -207,7 +231,7 @@
         padding: 0 24px 0 24px;
         position: relative;
         min-height: 48px;
-        transition: min-height 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        transition: all .6s;
         align-items: center;
         justify-content: space-between;
         cursor: pointer;

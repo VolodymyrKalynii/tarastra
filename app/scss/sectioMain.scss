@@ -71,7 +71,6 @@
         max-width: 80%;
         position: static;
         margin: 0 auto;
-        transform: translateY(0)!important;
       }
     }
 
@@ -145,10 +144,8 @@
       max-width: 80%;
       @include md-block() {
         margin: 32px auto;
-        transform: translateY(0)!important;
       }
     }
-
   }
 
   &Webapp{

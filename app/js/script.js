@@ -1,22 +1,10 @@
-
-// Работа лоадера
-
-// Заглушка для проверки работы лоадера
-function loader() {
-    $('.loader').fadeOut();
-}
-setTimeout(loader, 000);
-
-// $(window).on('load', function() {
-//     $('.loader').fadeOut('slow');
-// });
-
-//# Работа лоадера
+//Работа лоадера
+$(window).on('load', function() {
+    $('.loader').fadeOut('slow');
+});
 
 
-
-$(document).ready(function(){
-
+$(function () {
     new WOW().init();
 
     //Запуск слайдера
@@ -49,29 +37,6 @@ $(document).ready(function(){
         }, 500);
     });
 
-
-    //Проверка при скролле страницы
-    $(document).on('scroll',function(){
-        //Проверяем кнопку "наверх"
-        scroolBtn('.toTop');
-
-        //Анимация каринок вверх-вниз
-        animateElements();
-
-
-        onScrollFaq();
-    });
-
-    //Проверяем кнопку "наверх"
-    scroolBtn('.toTop');
-
-    //Работа кнопки "наверх"
-    $('.toTop').on('click',function(){
-        $('html,body').animate({
-            scrollTop: 0
-        },500);
-    });
-
     //Прячем попап куки
     $('.js-cookiePop').on('click', function (e) {
         e.preventDefault();
@@ -86,23 +51,21 @@ $(document).ready(function(){
             $(this).find('.btn__ripple').remove();
         }
 
-        var addDiv  = document.createElement('span'),
+        var addSpan  = document.createElement('span'),
             mValue  = Math.max(this.clientWidth, this.clientHeight),
-            rect    = this.getBoundingClientRect(),
-            sDiv    = addDiv.style,
-            px      = 'px';
+            rect    = this.getBoundingClientRect();
 
-        sDiv.width  = sDiv.height = mValue + px;
-        sDiv.left  = e.clientX - rect.left - (mValue / 2) + px;
-        sDiv.top   = e.clientY - rect.top - (mValue / 2) + px;
+        addSpan.style.width  = addSpan.style.height = mValue + 'px';
+        addSpan.style.left  = e.clientX - rect.left - (mValue / 2) + 'px';
+        addSpan.style.top   = e.clientY - rect.top - (mValue / 2) + 'px';
 
-        addDiv.classList.add('btn__ripple');
-        $(this).find('.btn__rippleWrapp').append(addDiv);
+        $(addSpan).addClass('btn__ripple');
+        $(this).find('.btn__rippleWrapp').append(addSpan);
     });
 
     //Прокрутка по якорях
     $("a[href*=\\#]").on('click', function (e) {
-       e.preventDefault();
+        e.preventDefault();
 
         var selector = $(this).attr('href');
         var h = $(selector);
@@ -111,75 +74,115 @@ $(document).ready(function(){
             scrollTop: h.offset().top - 70
         },400);
     });
+});
+/* Анимация при скролле страницы */
 
+$(document).on('scroll',function(){
+    animateElements('.sectionMain__macbookImg');
+    animateElements('.sectionCta__cardImg');
+    animateElements('.sectionPayment__figure');
+});
+
+//Функция анимации картинок
+function animateElements(elem) {
+    if (!$(elem).length) return;
+
+    if ($(window).width() > '992') {
+
+        var offset = $(elem).offset().top,
+            scrollTop = $(this).scrollTop(),
+            scrollVal = (scrollTop - offset) / 4;
+
+        if (scrollTop < offset + 300 && scrollTop > offset - 200 ) {
+            $(elem).css({'transform':'translateY(' + scrollVal + 'px)'});
+        }
+    }
+}
+
+/* # Анимация при скролле страницы */
+/*  Странница blog */
+$(function () {
+
+    //Переключаем активные вкладки в блоге
     $('[data-openTab]').on('click', function (e) {
         $('[data-openTab]').removeClass('blogTabs__tab-active');
         $(this).addClass('blogTabs__tab-active');
     });
+});
 
+/* # Странница blog */
+/*  Странница faq */
 
-    $('.faqSearch__input').on('focus', function (e) {
-       $(this).closest('.faqSearch__inner').addClass('faqSearch__inner-focus');
+$(function () {
+    //фокус и анфокус лейбла
+    var searchField = $('.faqSearch__input');
+    var cleanSearchField = $('.faqSearch__clean');
+
+    searchField.on('focus', function (e) {
+        $(this).closest('.faqSearch__inner').addClass('faqSearch__inner-focus');
     });
-
-    $('.faqSearch__input').focusout('focus', function (e) {
+    searchField.focusout('focus', function (e) {
         $(this).closest('.faqSearch__inner').removeClass('faqSearch__inner-focus');
     });
 
+    // работа кнопки "очистить поле поиска"
+
+    // проверяем есть ли что-то в поле
+    searchField.on('keyup', function () {
+        if (!searchField.val())
+            cleanSearchField.removeClass("faqSearch__clean-visible");
+        else
+            cleanSearchField.addClass("faqSearch__clean-visible");
+    });
+
+    // очистка поля
+    cleanSearchField.on('click', function () {
+        searchField.val('');
+        cleanSearchField.removeClass("faqSearch__clean-visible");
+    });
+
+
+    //работа табов
     $('.faqItems__panelTitle').on('click', function () {
         $(this).next().slideToggle();
         $(this).closest('.faqItems__panel').toggleClass('faqItems__panel-opened');
     });
 });
 
-//Проверка при загрузке и ресайзе давать ли клас кнопке меню, и анимировать ли картинки
-$(window).on('load resize', animateElements, toggleClassLogin);
+// Переключение активных пунктов сайдбара при скроле
+$(document).on('scroll', function () {
+    onScrollFaq(".faqContent__sidebarInner");
+});
 
-
-var menu_selector = ".faqContent__sidebarInner"; // Переменная должна содержать название класса или идентификатора, обертки нашего меню.
-function onScrollFaq(){
+// Функция переключение активных пунктов сайдбара при скроле
+function onScrollFaq(selector){
     var scroll_top = $(document).scrollTop();
-    $(menu_selector + " a").each(function(){
+    $(selector + " a").each(function(){
         var hash = $(this).attr("href");
         var target = $(hash);
-        if (target.position().top <= scroll_top + 150 && target.position().top + target.outerHeight() > scroll_top - 50 || target.position().top >= scroll_top+100 && $(this).closest('li').index() == 0) {
-            $(menu_selector + " a.faqContent__sidebarLink-active").removeClass("faqContent__sidebarLink-active");
+        if (target.position().top <= scroll_top + 150 && target.position().top + target.outerHeight() > scroll_top - 50 || target.position().top >= scroll_top+100 && !$(this).closest('li').index()) {
+            $(selector + " a.faqContent__sidebarLink-active").removeClass("faqContent__sidebarLink-active");
             $(this).addClass("faqContent__sidebarLink-active");
         }  else {
-        $(this).removeClass("faqContent__sidebarLink-active");
-    }
+            $(this).removeClass("faqContent__sidebarLink-active");
+        }
+    });
+}
+
+/* # Странница faq */
+/*  Кнопка прокрутки */
+
+$(window).on('scroll load', function () {
+    //Проверяем кнопку "наверх"
+    scroolBtn('.toTop');
 });
-}
 
-
-//Функция анимации картинок
-function animateElements(){
-    if ($(window).width() > '992'){
-        var top2 = $(this).scrollTop();
-        if (top2 < 300){
-            var scrollWal = top2/4;
-            $('.sectionMain__macbookImg').css({'transform':'translateY(' + scrollWal + 'px)'});
-            $('.sectionCta__cardImg').css({'transform':'translateY(' + scrollWal + 'px)'});
-        }
-        if($('*').is('.sectionPayment__figure')){
-            var offset = $('.sectionPayment__figure').offset().top;
-            if (top2 > offset - 200 && top2 < offset + 300){
-
-                var scrollWal2 = (top2-offset)/4;
-                $('.sectionPayment__figure').css({'transform':'translateY(' + scrollWal2 + 'px)'});
-            }
-        }
-    }
-}
-
-//Функция добавленя/удаления класу кнопке логин
-function toggleClassLogin(){
-    if ($(window).width() < '992'){
-        $('.header__cabBtnLogIn').addClass('btn');
-    } else {
-        $('.header__cabBtnLogIn').removeClass('btn');
-    }
-}
+//Работа кнопки "наверх"
+$('.toTop').on('click',function(){
+    $('html,body').animate({
+        scrollTop: 0
+    },500);
+});
 
 //Функция видимости кнопки скролла
 function scroolBtn(btn){
@@ -187,8 +190,9 @@ function scroolBtn(btn){
 
     if (top > 300) {
         $(btn).fadeIn(500);
-    }
-    else {
+    } else {
         $(btn).fadeOut(500);
     }
 }
+
+/* # Кнопка прокрутки */

@@ -45,6 +45,20 @@
 	&__cabBtnLogIn{
 		position: relative;
 		font-weight: inherit;
+		box-shadow: none;
+		min-width: inherit;
+		padding:0;
+
+		.btn__rippleWrapp{
+			display: none;
+		}
+
+		&:hover{
+			background: transparent;
+			span{
+				color: #4da1ff;
+			}
+		}
 	}
 
 	&__open{
@@ -155,6 +169,7 @@
 		}
 
 		&__cabBtnLogIn{
+			box-shadow: 0 0 7px 3px rgba(0, 103, 175, 0.1);
 			transition: all 0.2s ease;
 			width:100%;
 			font-weight: 500;
@@ -163,6 +178,10 @@
 
 			&:hover{
 				background-color: #cae3f9;
+			}
+
+			.btn__rippleWrapp{
+				display: block;
 			}
 		}
 

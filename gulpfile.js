@@ -6,6 +6,7 @@ var gulp=require('gulp'),
     del=require('del'),
     autoprefixer=require('gulp-autoprefixer'),
     gcmq = require('gulp-group-css-media-queries'),
+    concat = require('gulp-concat'),
     sourcemaps = require('gulp-sourcemaps');
 
 
@@ -25,6 +26,18 @@ gulp.task('sass', function(){
         .pipe(browserSync.reload({stream: true}))
 });
 
+gulp.task('libsJs', function() {
+    return gulp.src('app/libs/*.*')
+        .pipe(gulp.dest('app/js')); // Выгружаем в папку app/js
+});
+
+gulp.task('scripts', function() {
+    return gulp.src('app/scripts/*.*')
+        .pipe(concat('script.js'))
+        .pipe(gulp.dest('app/js'))
+        .pipe(browserSync.reload({stream: true}))
+});
+
 gulp.task('browser-sync', function() {
     browserSync({
         server: {
@@ -34,9 +47,10 @@ gulp.task('browser-sync', function() {
     });
 });
 
-gulp.task('watch', ['browser-sync', 'sass'], function() {
+gulp.task('watch', ['browser-sync', 'sass','libsJs', 'scripts'], function() {
     gulp.watch('app/scss/*.scss', ['sass']);
-    gulp.watch('app/index.html')
+    gulp.watch('app/index.html');
+    gulp.watch('app/scripts/*.js',['scripts']);
 });
 
 gulp.task('clean', function() {

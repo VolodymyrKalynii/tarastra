@@ -872,6 +872,22 @@ ul li:before {
 .header__cabBtnLogIn {
   position: relative;
   font-weight: inherit;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  min-width: inherit;
+  padding: 0;
+}
+
+.header__cabBtnLogIn .btn__rippleWrapp {
+  display: none;
+}
+
+.header__cabBtnLogIn:hover {
+  background: transparent;
+}
+
+.header__cabBtnLogIn:hover span {
+  color: #4da1ff;
 }
 
 .header__open {
@@ -1724,6 +1740,42 @@ ul li:before {
   -webkit-tap-highlight-color: transparent;
 }
 
+.faqSearch__clean {
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+          align-self: center;
+  cursor: pointer;
+  display: none;
+}
+
+.faqSearch__clean-visible {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.faqSearch__cleanSpan {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.faqSearch__clean svg {
+  width: 32px;
+  height: 32px;
+  fill: rgba(4, 44, 71, 0.5);
+}
+
 .faqContent {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1800,6 +1852,7 @@ ul li:before {
 
 .faqItems__item {
   margin-top: 20px;
+  padding-bottom: 20px;
 }
 
 .faqItems__itemTitle {
@@ -1814,6 +1867,12 @@ ul li:before {
           box-shadow: none;
   padding: 8px 0;
   border-bottom: 1px solid rgba(151, 151, 151, 0.1);
+}
+
+.faqItems__panel-opened .faqItems__panelTitle {
+  -webkit-transform: translateY(10px);
+      -ms-transform: translateY(10px);
+          transform: translateY(10px);
 }
 
 .faqItems__panel-opened .faqItems__panelTitleArrowSvg {
@@ -1834,9 +1893,9 @@ ul li:before {
   padding: 0 24px 0 24px;
   position: relative;
   min-height: 48px;
-  -webkit-transition: min-height 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-  -o-transition: min-height 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-  transition: min-height 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  -webkit-transition: all .6s;
+  -o-transition: all .6s;
+  transition: all .6s;
   -webkit-box-align: center;
   -webkit-align-items: center;
       -ms-flex-align: center;
@@ -3186,6 +3245,12 @@ ul li:before {
     overflow: hidden;
   }
 
+  .parallax-inner {
+    -webkit-transform: translateY(0) !important;
+        -ms-transform: translateY(0) !important;
+            transform: translateY(0) !important;
+  }
+
   .toTop {
     display: none !important;
   }
@@ -3306,6 +3371,8 @@ ul li:before {
   }
 
   .header__cabBtnLogIn {
+    -webkit-box-shadow: 0 0 7px 3px rgba(0, 103, 175, 0.1);
+            box-shadow: 0 0 7px 3px rgba(0, 103, 175, 0.1);
     -webkit-transition: all 0.2s ease;
     -o-transition: all 0.2s ease;
     transition: all 0.2s ease;
@@ -3317,6 +3384,10 @@ ul li:before {
 
   .header__cabBtnLogIn:hover {
     background-color: #cae3f9;
+  }
+
+  .header__cabBtnLogIn .btn__rippleWrapp {
+    display: block;
   }
 
   .header__cabBtnSignUp {
@@ -3344,9 +3415,6 @@ ul li:before {
     max-width: 80%;
     position: static;
     margin: 0 auto;
-    -webkit-transform: translateY(0) !important;
-        -ms-transform: translateY(0) !important;
-            transform: translateY(0) !important;
   }
 
   .sectionCW__trCardWrapp {
@@ -3355,9 +3423,6 @@ ul li:before {
 
   .sectionPayment__figure {
     margin: 32px auto;
-    -webkit-transform: translateY(0) !important;
-        -ms-transform: translateY(0) !important;
-            transform: translateY(0) !important;
   }
 
   .sectionWebapp__slider {

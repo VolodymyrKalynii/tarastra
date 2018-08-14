@@ -204,6 +204,10 @@ button{
 
 .parallax-inner{
 	transition: all 1s ease-in-out;
+
+	@include md-block() {
+		transform: translateY(0) !important;
+	}
 }
 
 .text-blue {
